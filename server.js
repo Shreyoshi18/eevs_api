@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const cors = require('cors');
 const Vonage = require('@vonage/server-sdk');
 const bcrypt = require('bcrypt-nodejs');
-
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(bodyParser.json());
@@ -279,6 +279,7 @@ app.post('/forgot', (req, res) => {
 		    });
 	
   });
-app.listen(3000,() =>{
+
+app.listen(port,() =>{
 	console.log("App is listening");
 });
